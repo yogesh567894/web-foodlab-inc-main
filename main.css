@@ -103,6 +103,7 @@ input, select, textarea {
 		background-image: url("green-technology-microchip-on-motherboard-sending-2022-08-04-18-38-08-utc (1).gif");
 		/*background-size: cover;*/
 		background-repeat: no-repeat;
+		background-size: 100%;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2284,6 +2285,8 @@ input, select, textarea {
 
 		.icon.style1 {
 			color: #efa8b0;
+			width: 2em;
+				height: 2em;
 		}
 
 		.icon.style2 {
@@ -2395,6 +2398,7 @@ input, select, textarea {
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.5s;
+	
 }
 
 .card:hover .card-inner {
@@ -2422,8 +2426,9 @@ input, select, textarea {
 }
 .bold-i{
 	color: #fff !important;
-	font:bold;
+	font:medium;
 	font-family: 'Courier New', Courier, monospace;
+	margin: 5%;
 	
 }
 .card-back {
@@ -2939,7 +2944,29 @@ input, select, textarea {
 	ul.icons {
 		cursor: default;
 		list-style: none;
-		padding-left: 0;
+		
+		
+	}
+	.icons-1{
+		
+		padding: 15%;
+		
+		
+		
+
+	}
+
+	.icons-2{
+		
+		padding-top: 25%;
+		padding-left: 25%;
+		padding-right: 25%;
+		padding-bottom: 11%;
+		
+		
+		
+		
+
 	}
 
 		ul.icons li {
@@ -2950,6 +2977,7 @@ input, select, textarea {
 			ul.icons li:last-child {
 				padding-right: 0 !important;
 			}
+		
 
 /* Section/Article */
 .major1{
