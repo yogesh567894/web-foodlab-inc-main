@@ -118,6 +118,319 @@ input, select, textarea {
 		}
 
 /* Type */
+#gallerywrapper {
+	width:640px;
+	height:450px;
+	margin:0 auto;
+	position:relative;
+	font-family:verdana, arial, sans-serif;
+  } 
+  
+  #gallerywrapper #gallery {
+	position:absolute;
+	left:0;
+	top:0;
+	height:450px;
+	width:640px;
+	overflow:hidden;
+	text-align:center;
+  } 
+  
+  #gallerywrapper #gallery div {
+	width:640px; height:900px; 
+	padding-top:10px; 
+	position:relative;
+  } 
+  
+  #gallerywrapper #gallery div img {
+	clear:both; 
+	display:block; 
+	margin:0 auto; 
+	border:0;
+  } 
+  
+  #gallerywrapper #gallery div h3 {
+	padding:10px 0 0 0; 
+	margin:0; 
+	font-size:18px;
+  } 
+  
+  #gallerywrapper #gallery div p {
+	padding:5px 0; 
+	margin:0; 
+	font-size:12px; 
+	line-height:18px;
+  } 
+  
+  #gallery .previous{ 
+	display:inline;
+	float:left;
+	margin-left:80px;
+	text-decoration:none;
+  } 
+  
+  #gallery .next{ 
+	display:inline;
+	float:right;
+	margin-right:80px;
+	text-decoration:none;
+  }
+  
+  
+  .showcase {
+	background: var(--primary-color);
+	color: #fff;
+	height: 100vh;
+	position: relative;
+  }
+  
+  .showcase:before {
+	content: '';
+	background: url('https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+  }
+  
+  .showcase .showcase-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100%;
+  }
+  
+  .showcase h1 {
+	font-size: 4rem;
+  }
+  
+  .showcase p {
+	font-size: 1.3rem;
+  }
+  
+  .btn {
+	display: inline-block;
+	border: none;
+	background: var(--primary-color);
+	color: #fff;
+	padding: 0.75rem 1.5rem;
+	margin-top: 1rem;
+	transition: opacity 1s ease-in-out;
+	text-decoration: none;
+  }
+  
+  .btn:hover {
+	opacity: 0.7;
+  }
+  
+  /* MENU STYLES */
+  .menu-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+  }
+  
+  .menu-wrap .menu > div > div > ul > li:hover {
+	background-color: #fff;
+	
+	color: black;
+	transition: 0.4s;
+  
+  }
+  
+  .menu-wrap .toggler {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	opacity: 0;
+  }
+  
+  .menu-wrap .hamburger {
+	position: absolute;
+	top: 0;
+	visibility: hidden;
+	z-index: 1;
+	width: 60px;
+	height: 60px;
+	padding: 1rem;
+	
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+
+  @media screen and (max-width: 980px) {
+
+	.menu-wrap .hamburger{
+		visibility:visible;
+	
+		
+
+	}
+}
+@media screen and (max-width: 680px) {
+
+	.menu-wrap .hamburger{
+		visibility:visible;
+	
+		
+		width: 50px;
+		height: 50px;
+
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	.menu-wrap .hamburger{
+		visibility:visible;
+	
+		
+		width: 40px;
+		height: 40px;
+
+	}
+}
+
+@media screen and (max-width: 360px) {
+
+	.menu-wrap .hamburger{
+		visibility:visible;
+	
+		
+		width: 30px;
+		height: 30px;
+
+	}
+}
+  
+  /* Hamburger Line */
+  .menu-wrap .hamburger > div {
+	position: relative;
+	flex: none;
+	width: 100%;
+	height: 2px;
+	background-color: #fff;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.4s ease;
+  }
+  
+  /* Hamburger Lines - Top & Bottom */
+  .menu-wrap .hamburger > div::before,
+  .menu-wrap .hamburger > div::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	top: -10px;
+	width: 100%;
+	height: 2px;
+	background: inherit;
+  }
+  
+  /* Moves Line Down */
+  .menu-wrap .hamburger > div::after {
+	top: 10px;
+	background-color: #fff;
+  }
+  
+  /* Toggler Animation */
+  .menu-wrap .toggler:checked + .hamburger > div {
+	transform: rotate(135deg);
+  }
+  
+  /* Turns Lines Into X */
+  .menu-wrap .toggler:checked + .hamburger > div:before,
+  .menu-wrap .toggler:checked + .hamburger > div:after {
+	top: 0;
+	transform: rotate(90deg);
+  }
+  
+  /* Rotate On Hover When Checked */
+  .menu-wrap .toggler:checked:hover + .hamburger > div {
+	transform: rotate(225deg);
+  }
+  
+  /* Show Menu */
+  .menu-wrap .toggler:checked ~ .menu {
+	visibility: visible;
+  }
+  
+  .menu-wrap .toggler:checked ~ .menu > div {
+	transform: scale(1);
+	transition-duration: var(--menu-speed);
+  }
+  
+  .menu-wrap .toggler:checked ~ .menu > div > div {
+	opacity: 1;
+	transition:  opacity 0.4s ease 0.4s;
+  }
+  
+  .menu-wrap .menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .menu-wrap .menu > div {
+	background-color: black;
+	border-radius: 50%;
+	width: 200vw;
+	height: 200vw;
+	display: flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	transform: scale(0);
+	transition: all 0.4s ease;
+  }
+  
+  .menu-wrap .menu > div > div {
+	text-align: center;
+	background-color: black;
+	max-width: 90vw;
+	max-height: 100vh;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+  }
+  .menu-wrap .menu > div > div > ul{
+	background-color: black;
+  }
+  
+  .menu-wrap .menu > div > div > ul > li {
+	list-style: none;
+	
+	font-size: 1.5rem;
+	padding: 1rem;
+  }
+  
+  .menu-wrap .menu > div > div > ul > li > a {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.4s ease;
+  }
+
+ 
+  
 
 	body {
 		background-color: #080c08;
@@ -131,19 +444,27 @@ input, select, textarea {
 		line-height: 1.65;
 	}
 
-		@media screen and (max-width: 1680px) {
+		@media screen and (max-width: 680px) {
 
 			body, input, select, textarea {
 				font-size: 14pt;
 			}
+			
 
 		}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 480px) {
 
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
+			.menu-wrap .hamburger {
+				visibility:visible;
+				width: 40px;
+	            height: 40px;
+
+			}
+
 
 		}
 
@@ -152,6 +473,13 @@ input, select, textarea {
 			body, input, select, textarea {
 				font-size: 11pt;
 			}
+			.menu-wrap .hamburger .div{
+				visibility:visible;
+				width: 40px;
+	            height: 40px;
+
+			}
+
 
 		}
 
@@ -2310,6 +2638,7 @@ input, select, textarea {
 			.icon.major:before {
 				font-size: 5.5rem;
 			}
+			 
 
 		}
 
@@ -2319,18 +2648,35 @@ input, select, textarea {
 				font-size: 4.75rem;
 			}
 
+		
+
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 980px) {
 
 			.icon.major {
-				margin: 0 0 1.5em 0;
+				margin: 1.5em 0 1.5em 0;
 				padding: 0.35em;
 			}
 
 				.icon.major:before {
 					font-size: 3.5rem;
+					
+
 				}
+
+				.icon-h3{
+					
+    padding-left: 2em;
+    padding-right: 2em‒;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+				}
+
+
+				
 
 		}
 
@@ -2386,10 +2732,10 @@ input, select, textarea {
 
 	/* Original CSS */
 .card {
-    width: 600px;
-    height: 400px;
+    width: 50rem;
+    height: 20rem;
     perspective: 1000px; /* Depth for 3D effect */
-    margin: 20px;
+    margin: 4em;
 }
 
 .card-inner {
@@ -2414,7 +2760,7 @@ input, select, textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 3em;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
@@ -2428,42 +2774,44 @@ input, select, textarea {
 	color: #fff !important;
 	font:medium;
 	font-family: 'Courier New', Courier, monospace;
-	margin: 5%;
+	font-size: 1.2em;
+	
 	
 }
 .card-back {
     background-color: #fff; /* White background for back side */
     color: black; /* Text color for back side */
     transform: rotateY(180deg); /* Flipped position */
+	font-size: 0.7em;
 }
 
 .front h3 {
-    font-size: 1.2rem;
+    
     margin-bottom: 5px;
 }
 
 .front .authors {
-    font-size: 0.9rem;
+    
     color: #555;
     margin-bottom: 10px;
 }
 
 .back h4 {
-    font-size: 1rem;
+    
     margin-bottom: 5px;
 }
 
 .back p {
-    font-size: 0.9rem;
+    
     line-height: 1.3;
 }
 
 	.logo {
 		position: absolute;
 		top: 8%;
-    left: 40px;
-    width: 29vh;
-    height: 11vh;
+    left: 3%;
+    width: 12rem;
+    height: 4rem;
 		
 		display: flex;
 		justify-content: center;
@@ -2472,17 +2820,190 @@ input, select, textarea {
 		background-size: cover;
 
 	}
+
+	
+
+	 
 	.logo2{
 		position: absolute;
 		top:8%;
-		left:80%;
-		width: 15vh;
-		height: 8vh;
+		left:86%;
+		width: 10rem;
+		height: 5rem;
 		
 		
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+	}
+
+	@media screen and (max-width: 980px) {
+		.logo{
+			
+			width: 9rem;
+			height: 3rem;
+			top:8%;
+
+		}
+
+		.logo2{
+		
+			width: 8rem;
+			height: 4rem;
+			top:8%;
+		left:85%;
+
+		}
+		.card{
+			width: 27rem;
+			height: 27rem;
+			perspective: 1000px; /* Depth for 3D effect */
+			margin: 3em;
+		}
+		.bold-i {
+			
+			font-size: 1.7em;
+		}
+
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.logo{
+			width: 6rem;
+			height: 2rem;
+			top:7%;
+
+		}
+		.logo2{
+		
+			width: 7rem;
+			height: 3.5rem;
+			top:7%;
+		left:83%;
+
+		}
+		.card{
+			width: 25rem;
+			height: 25rem;
+			perspective: 1000px; /* Depth for 3D effect */
+			margin: 2.5em;
+		}
+		.bold-i {
+			
+			font-size: 1.6em;
+		}
+
+
+	}
+
+
+	@media screen and (max-width: 680px) {
+
+		.logo{
+			width: 4.5rem;
+			height: 1.5rem;
+			top:6%;
+
+		}
+		.logo2{
+		
+			width: 4rem;
+			height: 2.3rem;
+			top:6%;
+		left:81%;
+
+		}
+		.card{
+			width: 20rem;
+			height: 20rem;
+			perspective: 1000px; /* Depth for 3D effect */
+			margin: 2em;
+		}
+		.card-back {
+			
+			font-size: 0.7em;
+		}
+		.bold-i {
+			
+			font-size: 1.4em;
+		}
+
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.logo {
+			width: 3.9rem;
+			height: 1.3rem;
+			top:4%;
+
+		}
+		.logo2{
+		
+			width: 3rem;
+			height: 1.5rem;
+			top:4%;
+		left:80%;
+
+		}
+		.card{
+			width: 20rem;
+			height: 20rem;
+			perspective: 1000px; /* Depth for 3D effect */
+			margin: 1em;
+		}
+		.bold-i{
+			
+			font-size: 1.3em;
+			
+			
+		}
+		.card-back {
+			
+			font-size: 0.6em;
+		}
+
+
+	}
+
+
+	@media screen and (max-width: 360px) {
+
+		body, input, select, textarea {
+			font-size: 11pt;
+		}
+		.logo{
+			width: 3.6rem;
+			height: 1.2rem;
+			top:3%;
+
+		}
+		.logo2{
+		
+			width: 2rem;
+			height: 1rem;
+			top:3%;
+
+		}
+		.card{
+			width: 17rem;
+			height: 17rem;
+			perspective: 1000px; /* Depth for 3D effect */
+			margin: 2em;
+		}
+		.bold-i{
+			
+			font-size: 1.2em;
+			
+			
+		}
+		.card-back {
+			
+			font-size: 0.5em;
+		}
 
 	}
 	
@@ -2649,6 +3170,10 @@ input, select, textarea {
 				transition: opacity 0.1s ease;
 				
 				font-style: italic;
+			}
+			@media screen and (max-width: 736px) {
+				.hover-text2{}
+				
 			}
 			
 			
@@ -3006,7 +3531,7 @@ input, select, textarea {
 				content: '';
 				width: 3.25em;
 				height: 2px;
-				margin: 0.7em 0 1em 0;
+				margin: 0em 0 1em 0;
 				border-radius: 2px;
 			}
 
@@ -3041,6 +3566,7 @@ input, select, textarea {
 
 			header.major h2 {
 				font-size: 1.5em;
+				
 			}
 
 			header.major p {
@@ -3401,14 +3927,18 @@ input, select, textarea {
 						width: calc(100% + 1em);
 					}
 
-				.spotlight .image {
+				.spotlight  {
+					display: flex;
 					-moz-flex: 0 1 auto;
 					-webkit-flex: 0 1 auto;
 					-ms-flex: 0 1 auto;
 					flex: 0 1 auto;
 					margin-left: 0;
-					margin-bottom: 2em;
+					margin-bottom: 0;
+					
+
 				}
+				
 
 		}
 
@@ -3493,17 +4023,29 @@ input, select, textarea {
 				#header.alt {
 					padding: 6em 4em 3em 4em ;
 				}
+				#header.alt h1 {
+					font-size: 2.0em;
+				}
+				#header.alt h3 {
+					font-size: 1.5em;
+				}
 
 		}
 
 		@media screen and (max-width: 980px) {
 
 			#header {
-				padding: 4em 3em 0.1em 3em ;
+				padding: 3em 3em 0.1em 3em ;
 			}
 
 				#header.alt {
-					padding: 5em 3em 2em 3em ;
+					padding: 5em 3em 5em 3em ;
+				}
+				#header.alt h1 {
+					font-size: 1.7em;
+				}
+				#header.alt h3 {
+					font-size: 1.3em;
 				}
 
 		}
@@ -3511,7 +4053,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding: 3em 2em 0.1em 2em ;
+				padding: 2em 2em 0.1em 2em ;
 			}
 
 				#header p {
@@ -3524,11 +4066,14 @@ input, select, textarea {
 					}
 
 				#header.alt {
-					padding: 4em 2em 1em 2em ;
+					padding: 4em 2em 6em 2em ;
 				}
 
 					#header.alt h1 {
-						font-size: 2.5em;
+						font-size: 1.5em;
+					}
+					#header.alt h3 {
+						font-size: 1.1em;
 					}
 
 		}
@@ -3540,7 +4085,13 @@ input, select, textarea {
 			}
 
 				#header.alt {
-					padding: 4em 1.5em 1em 1.5em ;
+					padding: 4em 1.5em 4em 1.5em ;
+				}
+				#header.alt h1 {
+					font-size: 1em;
+				}
+				#header.alt h3 {
+					font-size: 0.5em;
 				}
 
 		}
@@ -3552,7 +4103,13 @@ input, select, textarea {
 			}
 
 				#header.alt {
-					padding: 3.5em 1em 0.5em 1em ;
+					padding: 3.5em 1em 3.5em 1em ;
+				}
+				#header.alt h1 {
+					font-size: 1em;
+				}
+				#header.alt h3 {
+					font-size: 0.5em;
 				}
 
 		}
@@ -3679,7 +4236,7 @@ input, select, textarea {
 					font-size: 0.9em;
 				}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 980px) {
 
 			#nav {
 				display: none;
@@ -3981,7 +4538,7 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			#main > .main {
-				padding: 4em 3em 2em 3em ;
+				padding: 1em 0em 2em 0em ;
 			}
 
 				#main > .main > .image.main:first-child {
